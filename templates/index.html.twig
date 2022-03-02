@@ -1,0 +1,80 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+
+    <div class="row">
+
+
+        <br>
+
+        <div class="accordion">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                            aria-controls="panelsStayOpen-collapseOne">
+                        Panel
+                    </button>
+                </h2>
+                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
+                     aria-labelledby="panelsStayOpen-headingOne">
+                    <div class="accordion-body">
+                        <div class="row">
+                            <div class="card" style="width: 18rem;">
+                                <img src="https://cdn3.iconfinder.com/data/icons/avatar-55/64/Teacher-avatar-occupation-profession-man-human-512.png"
+                                     class="card-img-top">
+                                <div class="card-body">
+                                    <h5 class="card-title text-center">Docente</h5>
+                                </div>
+                                <div class="card-body text-center">
+                                    <a href="{{ path('app_docente_new') }}" class="btn btn-success">+ Registrar </a>
+                                    <a href="{{ path('app_docente_index') }}" class="btn btn-secondary"> Listar</a>
+                                </div>
+                            </div>
+
+                            <div class="card" style="width: 18rem;">
+                                <img src="https://cdn0.iconfinder.com/data/icons/user-pictures/100/male-512.png"
+                                     class="card-img-top">
+                                <div class="card-body">
+                                    <h5 class="card-title text-center">Auxiliar</h5>
+                                </div>
+                                <div class="card-body text-center">
+                                    <a href="{{ path('app_auxiliar_new') }}" class="btn btn-success">+ Registrar </a>
+                                    <a href="{{ path('app_auxiliar_index') }}" class="btn btn-secondary"> Listar</a>
+                                </div>
+                            </div>
+
+                            <div class="card" style="width: 18rem;">
+                                <img src="https://cdn2.iconfinder.com/data/icons/business-persons-flat-1/512/person_4-512.png"
+                                     class="card-img-top">
+                                <div class="card-body">
+                                    <h5 class="card-title text-center">Oficinista</h5>
+                                </div>
+                                <div class="card-body text-center">
+                                    <a href="{{ path('app_oficinista_new') }}" class="btn btn-success">+ Registrar </a>
+                                    <a href="{{ path('app_oficinista_index') }}" class="btn btn-secondary"> Listar</a>
+                                </div>
+                            </div>
+
+                            <div class="card" style="width: 18rem;">
+                                <img src="https://cdn0.iconfinder.com/data/icons/mother-s-day-bzzricon-filled-lines/512/17_Family-512.png"
+                                     class="card-img-top">
+                                <div class="card-body">
+                                    <h5 class="card-title text-center">Padre de Familia</h5>
+                                </div>
+                                <div class="card-body text-center">
+                                    <a href="{{ path('app_padre_familia_new') }}" class="btn btn-success">+ Registrar </a>
+                                    <a href="{{ path('app_padre_familia_index') }}" class="btn btn-secondary"> Listar</a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

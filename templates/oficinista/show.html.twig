@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Oficinista{% endblock %}
+
+{% block body %}
+    <h1>Oficinista</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ oficinistum.id }}</td>
+            </tr>
+            <tr>
+                <th>ApellidoPaterno</th>
+                <td>{{ oficinistum.apellidoPaterno }}</td>
+            </tr>
+            <tr>
+                <th>ApellidoMaterno</th>
+                <td>{{ oficinistum.apellidoMaterno }}</td>
+            </tr>
+            <tr>
+                <th>Nombre</th>
+                <td>{{ oficinistum.nombre }}</td>
+            </tr>
+            <tr>
+                <th>Celular</th>
+                <td>{{ oficinistum.celular }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ oficinistum.email }}</td>
+            </tr>
+            <tr>
+                <th>Direccion</th>
+                <td>{{ oficinistum.direccion }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_oficinista_index') }}" class="btn btn-secondary"><< Listar</a>
+
+    <a href="{{ path('app_oficinista_edit', {'id': oficinistum.id}) }}" class="btn btn-success">Editar</a>
+    <br><br>
+
+    {{ include('oficinista/_delete_form.html.twig') }}
+{% endblock %}

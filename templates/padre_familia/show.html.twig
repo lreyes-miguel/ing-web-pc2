@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}PadreFamilia{% endblock %}
+
+{% block body %}
+    <h1>PadreFamilia</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ padre_familium.id }}</td>
+            </tr>
+            <tr>
+                <th>ApellidoPaterno</th>
+                <td>{{ padre_familium.apellidoPaterno }}</td>
+            </tr>
+            <tr>
+                <th>ApellidoMaterno</th>
+                <td>{{ padre_familium.apellidoMaterno }}</td>
+            </tr>
+            <tr>
+                <th>Nombre</th>
+                <td>{{ padre_familium.nombre }}</td>
+            </tr>
+            <tr>
+                <th>Dni</th>
+                <td>{{ padre_familium.dni }}</td>
+            </tr>
+            <tr>
+                <th>Celular</th>
+                <td>{{ padre_familium.celular }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ padre_familium.email }}</td>
+            </tr>
+            <tr>
+                <th>Direccion</th>
+                <td>{{ padre_familium.direccion }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_padre_familia_index') }}" class="btn btn-secondary"><< Listar</a>
+
+    <a href="{{ path('app_padre_familia_edit', {'id': padre_familium.id}) }}" class="btn btn-success">Editar</a>
+    <br><br>
+    {{ include('padre_familia/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Registrar Auxiliar{% endblock %}
+
+{% block body %}
+    <h1>Registrar Auxiliar</h1>
+
+    {{ include('auxiliar/_form.html.twig') }}
+
+    <a href="{{ path('app_auxiliar_index') }}" class="btn btn-secondary"><< Listar</a>
+{% endblock %}

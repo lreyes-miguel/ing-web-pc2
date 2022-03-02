@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Oficinista{% endblock %}
+
+{% block body %}
+    <h1>Oficinista</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Apellido Paterno</th>
+                <th>Apellido Materno</th>
+                <th>Nombre</th>
+                <th>Celular</th>
+                <th>Email</th>
+                <th>Direccion</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for oficinistum in oficinistas %}
+            <tr>
+                <td>{{ oficinistum.id }}</td>
+                <td>{{ oficinistum.apellidoPaterno }}</td>
+                <td>{{ oficinistum.apellidoMaterno }}</td>
+                <td>{{ oficinistum.nombre }}</td>
+                <td>{{ oficinistum.celular }}</td>
+                <td>{{ oficinistum.email }}</td>
+                <td>{{ oficinistum.direccion }}</td>
+                <td>
+                    <a href="{{ path('app_oficinista_show', {'id': oficinistum.id}) }}" class="btn btn-secondary">Mostrar</a>
+                    <a href="{{ path('app_oficinista_edit', {'id': oficinistum.id}) }}" class="btn btn-success">Editar</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">No se encontraron registros</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_oficinista_new') }}" class="btn btn-success">+ Registrar</a>
+{% endblock %}

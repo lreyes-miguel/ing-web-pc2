@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Docente{% endblock %}
+
+{% block body %}
+    <h1>Docente</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Apellido Paterno</th>
+                <th>Apellido Materno</th>
+                <th>Nombre</th>
+                <th>Email</th>
+                <th>Celular</th>
+                <th>Domicilio</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for docente in docentes %}
+            <tr>
+                <td>{{ docente.id }}</td>
+                <td>{{ docente.apellidoPaterno }}</td>
+                <td>{{ docente.apellidoMaterno }}</td>
+                <td>{{ docente.nombre }}</td>
+                <td>{{ docente.email }}</td>
+                <td>{{ docente.celular }}</td>
+                <td>{{ docente.domicilio }}</td>
+                <td>
+                    <a href="{{ path('app_docente_show', {'id': docente.id}) }}" class="btn btn-secondary">Mostrar</a>
+                    <a href="{{ path('app_docente_edit', {'id': docente.id}) }}" class="btn btn-success">Editar</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">No se encontraron registros</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_docente_new') }}" class="btn btn-success">+ Registrar Docente</a>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Registrar Padre de Familia{% endblock %}
+
+{% block body %}
+    <h1>Registrar Padre de Familia</h1>
+
+    {{ include('padre_familia/_form.html.twig') }}
+
+    <a href="{{ path('app_padre_familia_index') }}" class="btn btn-secondary"><< Listar</a>
+{% endblock %}

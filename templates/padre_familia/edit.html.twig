@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Editar Padre de Familia{% endblock %}
+
+{% block body %}
+    <h1>Editar Padre de Familia</h1>
+
+    {{ include('padre_familia/_form.html.twig', {'button_label': 'Actualizar'}) }}
+
+    <a href="{{ path('app_padre_familia_index') }}" class="btn btn-secondary"><< Listar</a>
+    <br><br>
+
+    {{ include('padre_familia/_delete_form.html.twig') }}
+{% endblock %}

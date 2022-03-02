@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Auxiliar{% endblock %}
+
+{% block body %}
+    <h1>Auxiliar</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ auxiliar.id }}</td>
+            </tr>
+            <tr>
+                <th>Apellido Paterno</th>
+                <td>{{ auxiliar.apellidoPaterno }}</td>
+            </tr>
+            <tr>
+                <th>Apellido Materno</th>
+                <td>{{ auxiliar.apellidoMaterno }}</td>
+            </tr>
+            <tr>
+                <th>Nombre</th>
+                <td>{{ auxiliar.nombre }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ auxiliar.email }}</td>
+            </tr>
+            <tr>
+                <th>Celular</th>
+                <td>{{ auxiliar.celular }}</td>
+            </tr>
+            <tr>
+                <th>Direccion</th>
+                <td>{{ auxiliar.direccion }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_auxiliar_index') }}" class="btn btn-secondary"><< Listar</a>
+
+    <a href="{{ path('app_auxiliar_edit', {'id': auxiliar.id}) }}" class="btn btn-success">Editar</a>
+    <br><br>
+
+    {{ include('auxiliar/_delete_form.html.twig') }}
+{% endblock %}
